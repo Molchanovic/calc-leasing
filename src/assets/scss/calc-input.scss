@@ -1,0 +1,135 @@
+@import 'variables.scss';
+@import 'fonts.scss';
+
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 2px;
+  background-color: $color-orange;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  background: $color-orange;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+
+input[type="range"]::-moz-range-track {
+  border-radius: 10px/100%;
+  height: 2px;
+  border: 1px solid cyan;
+  background-color: #fff;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background: #ecf0f1;
+  border: 1px solid cyan;
+  border-radius: 10px/100%;
+  cursor: pointer;
+}
+
+
+.cacl-input {
+
+  &__title {
+    margin-bottom: 25px;
+
+    @media (max-width: $mmd) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__block {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+
+    &::before {
+      content: '₽';
+      font-size: 30px;
+      line-height: 36px;
+      position: absolute;
+      top: 12px;
+      color: $color-grey;
+      right: 24px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    font-family: Nekst;
+    padding: 16px 24px;
+    border-radius: 16px;
+    background: $color-bg-input;
+    color: $color-grey;
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 900;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    @media (max-width: $mmd) {
+      padding: 17px 20px;
+      font-size: 22px;
+      line-height: 20px;
+    }
+  }
+
+  &__range-wrapper {
+    position: absolute;
+    bottom: -7px;
+    width: 100%;
+    padding: 0px 24px;
+
+    @media (max-width: $mmd) {
+      padding: 0px 20px;
+    }
+  }
+
+  &__range {
+    width: 100%;
+  }
+
+  &_month {
+    .cacl-input__block {
+      &::before {
+        content: 'мес.'
+      }
+    }
+  }
+
+  &_rub {}
+
+  &_slot {
+    .cacl-input__block {
+      &::before {
+        display: none;
+      }
+    }
+
+  }
+
+  &__procent {
+    padding: 15px 17px;
+    position: absolute;
+    background: $color-procent-block;
+    border-radius: 12px;
+    top: 8px;
+    right: 8px;
+    font-size: 22px;
+    line-height: 20px;
+    font-weight: 900;
+    color: $color-grey;
+  }
+}

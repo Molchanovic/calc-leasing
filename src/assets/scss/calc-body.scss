@@ -1,0 +1,108 @@
+@import 'variables.scss';
+@import 'fonts.scss';
+
+
+html,
+body,
+.home,
+#app {
+  height: 100%;
+}
+
+.title-text {
+  font-family: 'Gilroy';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: $color-grey;
+
+  @media (max-width: $mmd) {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+.calc-body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  justify-content: center;
+  align-items: center;
+
+  &__wrapper {}
+
+  &__title {
+    max-width: 740px;
+    margin-bottom: 30px;
+  }
+
+  &__form {}
+
+  &__form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 45px;
+    flex-wrap: wrap;
+
+
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .cacl-input {
+      $grid: 32;
+      flex: 0 0 0% + $grid;
+      max-width: 0% + $grid;
+
+      @media (max-width: $mlg) {
+        $grid: 100;
+        flex: 0 0 0% + $grid;
+        max-width: 0% + $grid;
+        margin-bottom: 40px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      @media (max-width: $mmd) {
+        margin-bottom: 20px;
+      }
+    }
+
+    .calc-price {
+      @media (max-width: $mlg) {
+        min-width: 332px;
+      }
+
+      @media (max-width: $mmd) {
+        min-width: 210px;
+      }
+
+      @media (max-width: $msm) {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__btn {
+    width: 426px;
+
+    @media (max-width: $mxl) {
+      width: 320px;
+    }
+
+    @media (max-width: $mlg) {
+      width: 345px;
+      margin-top: 45px;
+    }
+
+    @media (max-width: $mmd) {
+      margin-top: 20px;
+      width: 100%
+    }
+  }
+}
