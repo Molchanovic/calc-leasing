@@ -11,6 +11,7 @@
               @set-new-value="setCostcCar"
               @trow-error="setError"
               class="calc-input_rub"
+              :isPost="isPost"
               :input="inputConfig.costs"
             />
             <input-range
@@ -18,6 +19,7 @@
               @set-calc-value="setCalcValue"
               @trow-error="setError"
               class="cacl-input_slot"
+              :isPost="isPost"
               :carCosts="inputConfig.costs.currentValue"
               :input="inputConfig.payment"
               :functionCalc="true"
@@ -32,6 +34,7 @@
               @set-new-value="setTimeLeasing"
               @trow-error="setError"
               class="cacl-input_month"
+              :isPost="isPost"
               :input="inputConfig.time"
             />
           </div>

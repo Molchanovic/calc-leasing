@@ -1,7 +1,7 @@
 <template>
   <div class="cacl-input">
     <p class="cacl-input__title title-text">{{ input.title }}</p>
-    <div class="cacl-input__block">
+    <div class="cacl-input__block" :class="{ opasity: isPost }">
       <input
         @input="inputValue"
         @blur="minMaxValue"
@@ -48,6 +48,10 @@ export default {
     },
     carCosts: {
       type: Number,
+    },
+    isPost: {
+      type: Boolean,
+      default: false,
     },
   },
   methods: {

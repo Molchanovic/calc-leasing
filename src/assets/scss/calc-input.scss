@@ -61,6 +61,11 @@ input[type="range"]::-moz-range-thumb {
       color: $color-grey;
       right: 24px;
     }
+
+    &.opasity {
+      pointer-events: none;
+      opacity: 0.5;
+    }
   }
 
   &__input {
